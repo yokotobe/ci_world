@@ -17,6 +17,13 @@ class Blog extends CI_controller {
        $this->custom_smarty->display('base_layout.tpl');
   } 
   
+  public function category_lookup(){
+	  echo "category lookup";
+  }
+    public function category_index(){
+	  echo "category index";
+  }
+  
 }
 
 ?>
