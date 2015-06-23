@@ -17,11 +17,22 @@ class Blog extends CI_controller {
        $this->custom_smarty->display('base_layout.tpl');
   } 
   
-  public function category_lookup(){
-	  echo "category lookup";
-  }
-    public function category_index(){
+  public function category_index(){
 	  echo "category index";
+  }
+  public function category_lookup($category_name=null){
+	  if(isset($category_name)){
+			echo "{$category_name} category's items lookup";
+	  }else{
+			echo "Parameter is not set";
+	  }
+  }
+  public function category_lookup_date($category_name,$year){var_dump($db);
+	  if(isset($category_name) && is_numeric($year)){
+			echo "{$category_name} category of {$year} items lookup";
+	  }else{
+			echo "Parameter is not set";
+	  }
   }
   
 }
