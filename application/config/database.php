@@ -59,15 +59,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | the query builder class.
 */
 
-$active_group = 'default';
+$active_group = 'development';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['development'] = array(
+        'dsn'   => '',
+        'hostname' => 'localhost',
+        'username' => 'root',
+        'password' => 'root_password',
+        'database' => 'dbname',
+        'dbdriver' => 'mysqli',
+        'dbprefix' => '',
+        'pconnect' => TRUE,
+        'db_debug' => TRUE,
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8',
+        'dbcollat' => 'utf8_general_ci',
+        'swap_pre' => '',
+        'compress' => FALSE,
+        'encrypt' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array()
+);
+
+$db['staging'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'username' => 'user',
+	'password' => 'password',
+	'database' => 'dbname',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -83,3 +104,74 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+$db['production']['failover'] = array(
+		array(
+				   'dsn'   => '',
+					'hostname' => 'secondary_db_ip',
+					'username' => 'user_name',
+					'password' => 'user_password',
+					'database' => 'dbname',
+					'dbdriver' => 'mysqli',
+					'dbprefix' => '',
+					'pconnect' => TRUE,
+					'db_debug' => TRUE,
+					'cache_on' => FALSE,
+					'cachedir' => '',
+					'char_set' => 'utf8',
+					'dbcollat' => 'utf8_general_ci',
+					'swap_pre' => '',
+					'compress' => FALSE,
+					'encrypt' => FALSE,
+					'stricton' => FALSE,
+					'failover' => array()
+		),
+		array(
+				   'dsn'   => '',
+					'hostname' => 'secondary_db_ip',
+					'username' => 'user_name',
+					'password' => 'user_password',
+					'database' => 'dbname',
+					'dbdriver' => 'mysqli',
+					'dbprefix' => '',
+					'pconnect' => TRUE,
+					'db_debug' => TRUE,
+					'cache_on' => FALSE,
+					'cachedir' => '',
+					'char_set' => 'utf8',
+					'dbcollat' => 'utf8_general_ci',
+					'swap_pre' => '',
+					'compress' => FALSE,
+					'encrypt' => FALSE,
+					'stricton' => FALSE,
+					'failover' => array()
+
+		)
+);
+		
+$db['production'] = array(
+        'dsn'   => '',
+        'hostname' => 'localhost',
+        'username' => 'sitedbname',
+        'password' => 'user_password',
+        'database' => 'dbname',
+        'dbdriver' => 'mysqli',
+        'dbprefix' => '',
+        'pconnect' => TRUE,
+        'db_debug' => TRUE,
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8',
+        'dbcollat' => 'utf8_general_ci',
+        'swap_pre' => '',
+        'compress' => FALSE,
+        'encrypt' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array()
+);
+
+$db['development']['port'] = 3306;
+$db['staging']['port'] = 8654;
+$db['production']['port'] = 8654;
+
