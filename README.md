@@ -9,11 +9,9 @@ ci_smarty_template comes with a working example of Codeigniter MVC model implime
 
 Component
 -------------
-- Smarty 3
-- PHP 5.3
-- Apache or Nginx web server
-- Apache or Nginx web server
-- Apache or Nginx web server
+- Codeigniter 3.0.0
+- Smarty 3.1.27
+- Bootstrap 3.3.5
 
 Server Requirements
 -------------
