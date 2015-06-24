@@ -56,6 +56,12 @@ $route['translate_uri_dashes'] = FALSE;
 $route['category'] = 'blog/category_index';												// www.exaple.com/category/
 $route['category/(:any)'] = 'blog/category_lookup/$1';								// www.exaple.com/category/travel/
 $route['category/(:any)/(:num)'] = 'blog/category_lookup_date/$1/$2';	// www.exaple.com/category/travel/2015
+
+$route['world'] = 'world/world_index';														// www.example.com/world/
+$route['world/continent'] = 'world/continent_lookup';							// www.example.com/world/continent
+$route['world/continent/(:any)'] = 'world/continent_lookup/$1';				// www.example.com/world/continent/europe/
+$route['world/(:any)/(:num)'] = 'world/world_lookup_country/$1/$2';		// www.example.com/world/europe/belgium
+
 //$route['category/(:any)'] = 'blog/category_lookup';
 
 //$route['subjects/(:num)/(:any)'] = 'subjects/view/$1/$2';

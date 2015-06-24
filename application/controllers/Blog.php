@@ -27,7 +27,8 @@ class Blog extends CI_controller {
 			echo "Parameter is not set";
 	  }
   }
-  public function category_lookup_date($category_name,$year){var_dump($db);
+  public function category_lookup_date($category_name,$year){
+	  $this->load->database();
 	  if(isset($category_name) && is_numeric($year)){
 			echo "{$category_name} category of {$year} items lookup";
 	  }else{

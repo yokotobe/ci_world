@@ -32,10 +32,11 @@
 
     <div class="container">
 
-      <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
+		{if $show_custom_head|default:FALSE}
+			{include file=$page_custom_head}
+		{else}
+			{include file="application/views/templates/base_default_head.tpl"}
+		{/if}
 
       <div class="row">
 
