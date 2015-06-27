@@ -1,4 +1,4 @@
-<?
+<?php
 
 class World extends CI_controller {
 	public function index() {
