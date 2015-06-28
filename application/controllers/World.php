@@ -1,6 +1,19 @@
 <?php
 
 class World extends CI_controller {
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('html');
+		$this->load->helper('url');
+		$this->load->model('world_model', 'post');
+		$this->load->library("pagination");
+		$this->load->database();
+	}
+	
+	
+	
 	public function index() {
 		$data = array(
 		// 'headerContent' => $this->load->view('header', array(), TRUE),
@@ -9,6 +22,7 @@ class World extends CI_controller {
 		);
 		//$this->custom_smarty->template_dir = '/application/views/template/,/application/views/pages/,/application/views/error/'; 
 		//$this->custom_smarty->compile_id = $_SERVER['SCRIPT_NAME'];
+		
 		
 		$this->custom_smarty->assign('body','application/views/pages/blog.tpl');
 		$this->custom_smarty->assign('js', 'application/views/templates/base_js.tpl');
