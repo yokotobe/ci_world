@@ -33,12 +33,24 @@ class World_model extends CI_model {
 		$this->load->database();
 		$camelContinentName =  ucwords(strtolower($continent_name));
 		$query = "SELECT COUNT(*) AS total FROM `Country` WHERE continent='{$camelContinentName}'";
-		echo $query;
+		//echo $query;
 		$data = $this->db->query($query);
 		$total = $data->result_array();
 		$total = $total[0]['total'];
 	
 		return $total;
+	
+	}
+	
+	public function search_countires($query_name) {
+		$this->load->database();
+		$query_name = strtolower($query_name);
+		$query = "SELECT name,continent,region FROM `Country` WHERE name LIKE '%{$query_name}%'";
+		//$query = "SELECT COUNT(*) AS total FROM `Country` WHERE continent='{$camelContinentName}'";
+		echo $query;
+		$data = $this->db->query($query);
+	
+		return $data;
 	
 	}
 }

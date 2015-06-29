@@ -65,7 +65,7 @@ $route['world/continent'] = 'world/continent_lookup';							// www.example.com/w
 
 $route['world/continent/(:any)/(:num)'] = 'world/continent_countries/$1/$2'; //www.example.com/world/continent/europe/p2  page=2
 
-
+$route['world/country/search/(:any)'] = 'world/country_search/$1';
 $route['world/continent/(:any)'] = 'world/continent_countries/$1';				// www.example.com/world/continent/europe/
 
 $route['world/(:any)/(:num)'] = 'world/world_lookup_country/$1/$2';		// www.example.com/world/europe/belgium
