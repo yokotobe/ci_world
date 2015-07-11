@@ -7,7 +7,7 @@
 	<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 	<ul>
 	{section name=continent loop=$data}
-			<li><a href="{$current_url}/{$data[continent].key}">{$data[continent].name}</a></li>
+			<li><a href="/world/country/{strip}{$data[continent].key|replace:' ':'-'}">{$data[continent].name}</a></li>
 	{/section}
 	</ul>
 	</div>

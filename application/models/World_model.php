@@ -53,5 +53,19 @@ class World_model extends CI_model {
 		return $data;
 	
 	}
+	
+	public function get_country($country_name) {
+		$this->load->database();
+		
+		$query_name = strtolower($country_name);
+		$country_name = str_replace('-',' ',$country_name);
+		$query = "SELECT * FROM `country` WHERE name = '{$country_name}'";
+	
+		$data = $this->db->query($query);
+		$data = $data->result_array();
+		
+		return $data;
+	
+	}
 }
 ?>
