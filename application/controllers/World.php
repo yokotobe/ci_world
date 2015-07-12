@@ -208,6 +208,36 @@ class World extends CI_controller {
 			$this->custom_smarty->assign('css', 'application/views/templates/blog_css.tpl');
 			$this->custom_smarty->display('base_layout.tpl');
 	}
+	
+		public function country_edit($country_name){
+			
+				$this->load->model('world_model');
+			$country_result = $this->world_model->get_country($country_name);
+			
+			if(is_array($country_result) && count($country_result)){
+				echo "country edit home";
+				$this->custom_smarty->assign('data',$country_result[0]);
+			}else{
+				$this->custom_smarty->assign('data',FALSE);
+			}
+			
+			/*$this->load->model('world_model');
+			$country_result = $this->world_model->get_country($country_name);
+			if(is_array($country_result) && count($country_result)){
+				$this->custom_smarty->assign('data',$country_result[0]);
+			}else{
+				$this->custom_smarty->assign('data',FALSE);
+			}
+			*/
+			$this->custom_smarty->assign('show_custom_head','TRUE');
+			$this->custom_smarty->assign('page_custom_head','application/views/pages/head_custom_world.tpl');
+			$this->custom_smarty->assign('main_title',$country_name);
+			$this->custom_smarty->assign('current_url',current_url());
+			$this->custom_smarty->assign('body','application/views/pages/world_country_edit.tpl');
+			$this->custom_smarty->assign('js', 'application/views/templates/base_js.tpl');
+			$this->custom_smarty->assign('css', 'application/views/templates/blog_css.tpl');
+			$this->custom_smarty->display('base_layout.tpl');
+	}
 
 }
 

@@ -70,6 +70,7 @@ $route['world/continent/(:any)'] = 'world/continent_countries/$1';				// www.exa
 
 $route['world/(:any)/(:num)'] = 'world/world_lookup_country/$1/$2';		// www.example.com/world/europe/belgium
 $route['world/country/(:any)'] = 'world/world_lookup_country/$1';		// www.example.com//world/country/croatia
+$route['world/country/(:any)/edit'] = 'world/country_edit/$1';			// www.example.com//world/country/croatia/edit
 
 //$route['category/(:any)'] = 'blog/category_lookup';
 
