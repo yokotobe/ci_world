@@ -67,5 +67,30 @@ class World_model extends CI_model {
 		return $data;
 	
 	}
+	
+	public function update_country($data){
+		$this->load->database();
+		
+		$dataSet = "";
+		$condition = "";
+		
+		if(is_array($data)){
+			foreach($data as $key => $field){
+				if($key !== "code"){
+					$value = $this->db->escape($field);
+					$dataSet .= $key."=".$value.",";
+				}else{
+					$value = $this->db->escape($field);
+					$condition = "code = '{$field}'";
+				}
+			}
+				$dataSet = rtrim($dataSet, ",");
+				$query = "UPDATE  `country` SET {$dataSet} WHERE {$condition} ";
+				echo "<br><br>".$query;
+		}else{
+			exit();
+		}
+	
+	}
 }
 ?>

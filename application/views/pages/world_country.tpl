@@ -45,6 +45,9 @@
 				<th>Capital</th>
 				<td>{$data.Capital}</td>
 			</tr>
+			<tr>
+				<td colspan="2"><a href="{$current_url}/edit/" class="btn btn-primary btn-block">Edit</a></td>
+			</tr>
 
 	</tbody>
 	</table>
